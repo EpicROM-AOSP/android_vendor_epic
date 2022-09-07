@@ -103,8 +103,7 @@ endif
 # Bootanimation
 TARGET_SCREEN_WIDTH ?= 1080
 TARGET_SCREEN_HEIGHT ?= 1920
-PRODUCT_PACKAGES += \
-    bootanimation.zip
+$(call inherit-product, vendor/lineage/bootanimation/bootanimation.mk)
 
 # Lineage packages
 PRODUCT_PACKAGES += \
