@@ -1,21 +1,10 @@
-# Inherit common mobile Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit common mobile epic stuff
+$(call inherit-product, vendor/epic/config/common.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound=Argon.ogg \
     ro.config.alarm_alert=Hassium.ogg
-
-# Apps
-PRODUCT_PACKAGES += \
-    Aperture \
-    Backgrounds \
-    Eleven \
-    Etar \
-    ExactCalculator \
-    Jelly \
-    Profiles \
-    Seedvault
 
 ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
 PRODUCT_PACKAGES += \
@@ -24,16 +13,16 @@ endif
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
-    TrebuchetQuickStepGo
+    Launcher3QuickStepGo
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStepGo
+    Launcher3QuickStepGo
 else
 PRODUCT_PACKAGES += \
-    TrebuchetQuickStep
+    Launcher3QuickStep
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    TrebuchetQuickStep
+    Launcher3QuickStep
 endif
 
 # Charger

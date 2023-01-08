@@ -1,4 +1,4 @@
-# Copyright (C) 2019-2020 The LineageOS Project
+# Copyright (C) 2018-2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+include vendor/epic/build/target/product/epic_generic_car_target.mk
 
-# Allow building otatools
-TARGET_FORCE_OTA_PACKAGE := true
+$(call inherit-product, device/generic/car/emulator/aosp_car_emulator.mk)
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/sdk_arm64.mk)
+
+TARGET_NO_KERNEL_OVERRIDE := true
+
+PRODUCT_NAME := epic_sdk_car_arm64
+
+PRODUCT_SDK_ADDON_NAME := epic
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

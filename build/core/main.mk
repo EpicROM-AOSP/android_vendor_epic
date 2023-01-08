@@ -1,2 +1,2 @@
-# Include LineageOS versions
-include $(TOPDIR)vendor/lineage/build/core/main_version.mk
+# Include EpicROM-AOSP versions
+include $(TOPDIR)vendor/epic/build/core/main_version.mk

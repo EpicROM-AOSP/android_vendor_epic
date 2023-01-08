@@ -1,5 +1,5 @@
-# Set Lineage specific identifier for Android Go enabled products
+# Set epic specific identifier for Android Go enabled products
 PRODUCT_TYPE := go
 
-# Inherit mini common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
+# Inherit mini common epic stuff
+$(call inherit-product, vendor/epic/config/common_mini_phone.mk)
