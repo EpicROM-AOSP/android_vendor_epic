@@ -8,8 +8,4 @@ $(call inherit-product, device/lineage/atv/lineage_atv.mk)
 PRODUCT_PACKAGES += \
     LeanbackIME
 
-# Lineage packages
-PRODUCT_PACKAGES += \
-    LineageCustomizer
-
 PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/tv

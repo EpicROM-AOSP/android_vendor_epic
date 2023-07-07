@@ -14,9 +14,9 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# epic OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/lineage-$(LINEAGE_VERSION).zip
+LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/$(LINEAGE_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
@@ -24,4 +24,15 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(LINEAGE_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(LINEAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LINEAGE_TARGET_PACKAGE).sha256sum
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
+	@echo "                  EpicROM from the bottom                       " >&2
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
+	@echo "                                                                " >&2
 	@echo "Package Complete: $(LINEAGE_TARGET_PACKAGE)" >&2
