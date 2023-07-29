@@ -6,9 +6,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound=oneplus.ogg \
     ro.config.alarm_alert=into_the_night.ogg
 
-# Apps
+ifneq ($(PRODUCT_NO_CAMERA),true)
 PRODUCT_PACKAGES += \
     Aperture
+endif
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
