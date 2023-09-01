@@ -53,7 +53,7 @@ endif
 endif
 
 # Gapps
-#include vendor/lineage/config/gms.mk
+include vendor/lineage/config/gms.mk
 
 # Lineage-specific init rc file
 PRODUCT_COPY_FILES += \
