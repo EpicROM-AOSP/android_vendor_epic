@@ -2,6 +2,7 @@
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 $(call inherit-product-if-exists, vendor/lineage/audio/audio.mk)
 $(call inherit-product-if-exists, vendor/lineage/config/epic.mk)
+$(call inherit-product-if-exists, vendor/extras/extras.mk)
 
 PRODUCT_BRAND ?= EpicROM-AOSP
 
