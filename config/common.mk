@@ -130,6 +130,10 @@ PRODUCT_PACKAGES += \
 # BtHelper
 PRODUCT_PACKAGES += \
     BtHelper
+	
+# GameSpace
+PRODUCT_PACKAGES += \
+    GameSpace	
 
 # Charger
 PRODUCT_PACKAGES += \
