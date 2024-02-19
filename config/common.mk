@@ -125,7 +125,8 @@ include vendor/aosp/config/bootanimation.mk
 
 # epic packages
 PRODUCT_PACKAGES += \
-    EpicWallpaperStub
+    EpicWallpaperStub \
+	OmniStyle
 
 # BtHelper
 PRODUCT_PACKAGES += \
