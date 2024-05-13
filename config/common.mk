@@ -4,7 +4,7 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 # Google Apps
 $(call inherit-product, vendor/gms/products/gms.mk)
 
-PRODUCT_BRAND ?= PixelOS
+PRODUCT_BRAND ?= EpicROM
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -123,6 +123,10 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Bootanimation
 include vendor/aosp/config/bootanimation.mk
 
+# epic packages
+PRODUCT_PACKAGES += \
+    EpicWallpaperStub
+
 # BtHelper
 PRODUCT_PACKAGES += \
     BtHelper
@@ -211,9 +215,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
-# Microsoft
-#$(call inherit-product, vendor/microsoft/packages.mk)
-
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     vendor/aosp/overlay
@@ -222,12 +223,9 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/aosp/overlay/common
 
 PRODUCT_PACKAGES += \
-    AndroidBlackThemeOverlay \
     CustomFontPixelLauncherOverlay \
     DocumentsUIOverlay \
-    NetworkStackOverlay \
-    ThemedIconsOverlay \
-    NavigationBarNoHintOverlay
+    NetworkStackOverlay
 
 # TextClassifier
 PRODUCT_PACKAGES += \
@@ -242,6 +240,9 @@ CUSTOM_LOCALES += \
     gd_GB \
     cy_GB \
     fur_IT
+	
+#Themes OVerlay
+include packages/overlays/Themes/themes.mk	
 
 include vendor/aosp/config/version.mk
 

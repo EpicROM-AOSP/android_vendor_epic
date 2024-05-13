@@ -14,13 +14,24 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# PixelOS OTA update package
+# epic OTA update package
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CUSTOM_VERSION).zip
-MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
+EPIC_ZIP_NAME := $(EPIC_VERSION).zip
+EPIC_TARGET_PACKAGE := $(PRODUCT_OUT)/$(EPIC_ZIP_NAME)
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
-	$(hide) $(MD5) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)" >&2
+	@echo "EpicROM OTA package"
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(EPIC_TARGET_PACKAGE)
+	@echo ""
+	@echo "Package Completed:"
+	@echo ""
+	@echo "                  EpicROM from the bottom                          "
+	@echo "═══════════════════════════════════════════════════════════════════"
+	@echo "Zip: $(EPIC_TARGET_PACKAGE)"
+	@echo "Size: `du -h "$(EPIC_TARGET_PACKAGE)" | cut -f1`"
+	@echo "SHA256: `sha256sum $(EPIC_TARGET_PACKAGE) | cut -f 1 -d " "`"
+	@echo "MD5: `md5sum $(EPIC_TARGET_PACKAGE) | cut -f 1 -d " "`"
+	@echo "═══════════════════════════════════════════════════════════════════"
+	@echo "" >&2
+
