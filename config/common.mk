@@ -136,6 +136,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GameSpace	
 
+# OmniJaws
+PRODUCT_PACKAGES += \
+    OmniJaws
+	
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images \
